@@ -22,6 +22,13 @@ import exPos from '@/components/page/example/exPage/exPos';
 import exMain from '@/components/page/example/exMain';
 
 
+
+
+
+//-----------------------------------------扫雷
+import saoLei from '@/components/page/SL';
+
+
 Vue.use(Router);
 
 
@@ -52,6 +59,12 @@ export default new Router({
                 { path: '/page1/:newsId(\\d+)/:newsTitle', component: page1, name: 'main的第一个子页面', beforeEnter: beforeEnterFn },
                 { path: '/page2', component: page2, name: 'page2', beforeEnter: beforeEnterFn },
             ]
+        },
+        {
+            path: '/sl',
+            name: '游戏页面',
+            component: saoLei,
+            beforeEnter: beforeEnterFn,
         },
         {
             path: '/main2',

@@ -1,46 +1,17 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>页面跳转(router测试)</h2>
+    <h1>扫雷</h1>
     <ul>
       <li>
         <router-link to="/main">main</router-link>
       </li>
     </ul>
-    <h2>单页面多路由测试</h2>
-    <ul>
-      <li>
-        <transition name='fade'>
-          <router-link to="/main2">main2</router-link>
-        </transition>
+    <h2>设置</h2>
+    <ul v-for="row in rowNum" class='sl-ul'>
+      <li v-for="col in colNum" class='sl-li'>
+       <div class="grid-content bg-purple">{{row}}-{{col}}</div>
       </li>
     </ul>
-
-    <h2>vuex测试</h2>
-    <ul>
-      <li>
-        <transition name='fade'>
-          <router-link to="/vuexMain">vuex</router-link>
-        </transition>
-      </li>
-    </ul>
-
-    <h2>vue-example入口</h2>
-    <ul>
-      <li>
-        <transition name='fade'>
-          <router-link to="/sl">SL入口</router-link>
-        </transition>
-        <transition name='fade'>
-          <router-link to="/exMain/exPos">example-exMain入口</router-link>
-        </transition>
-      </li>
-    </ul>
-
-    <div>
-      <!--<router-view class="aaa"></router-view>-->
-    </div>
-
   </div>
 </template>
 
@@ -49,7 +20,9 @@
     name: 'HelloWorld',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        rowNum:10,
+        colNum:10,
       }
     },
     beforeRouteEnter:(to,from,next)=>{
@@ -97,4 +70,34 @@
     opacity:0;
     transition:opacity .5s;
   }
+
+ .sl-ul{
+    padding:0;
+    margin:0;
+}
+.sl-li{
+    padding:0;
+    margin:0;
+ }
+.grid-content {
+    border-radius: 4px;
+    /*min-height: 36px;*/
+    background:#d5d5d5;
+    text-align: center;
+    width:20px;
+    height:20px;
+    font-size:8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
