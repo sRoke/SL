@@ -107,7 +107,7 @@
       }
     },
     created(){
-      axios.get('../../../../../static/mydata.json')
+      axios.get('./static/mydata.json')
         .then(response => {
           this.item = response.data;
           for(var i = 0 ;i<response.data.skuinfo.length;i++){
