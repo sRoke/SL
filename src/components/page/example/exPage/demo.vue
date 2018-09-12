@@ -1,7 +1,16 @@
 <template>
   <div class="demo">
-          <div class="demoDiv">
-            <ul class='cookList'>
+          <div class="demoDiv" style="margin-left: 30px">
+            <div>title:{{item.title}}</div>
+
+            <div>price:￥{{item.price}}元</div>
+
+            <div>goodsno:{{item.goodsno}}</div>
+
+            <div>brand:{{item.brand}}</div>
+
+
+            <ul class='cookList' style="margin: 0;padding: 0">
               <li style="border-top: 1px solid black">
                 <el-row type="flex" class="row-bg" justify="start">
                   <el-col class="tabs"><div>颜色/尺码</div></el-col>
@@ -107,7 +116,7 @@
       }
     },
     created(){
-      axios.get('./static/mydata.json')
+      axios.get('static/mydata.json')
         .then(response => {
           this.item = response.data;
           for(var i = 0 ;i<response.data.skuinfo.length;i++){
