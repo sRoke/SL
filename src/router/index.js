@@ -19,6 +19,7 @@ import vuexCount from '@/components/vuexPage/count';
 // ----------------------------------------------example
 
 import exPos from '@/components/page/example/exPage/exPos';
+import demo from '@/components/page/example/exPage/demo';
 import exMain from '@/components/page/example/exMain';
 
 
@@ -100,6 +101,7 @@ export default new Router({
             beforeEnter: beforeEnterFn,
             children: [
                 { path: '/exMain/exPos', component: exPos, name: 'exPos', beforeEnter: beforeEnterFn },
+                { path: '/exMain/demo', component: demo, name: 'demo', beforeEnter: beforeEnterFn },
                 // {path:'/page1/:newsId(\\d+)/:newsTitle',component:page1,name:'main的第一个子页面', beforeEnter:beforeEnterFn},
                 // {path:'/page2',component:page2,name:'page2', beforeEnter:beforeEnterFn},
             ]

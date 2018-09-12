@@ -8,7 +8,7 @@
 
       <li>
         <i class="icon iconfont icon-dianpu"></i>
-        <div @click="goTo">店铺11</div>
+        <div>店铺11</div>
       </li>
 
       <li>

@@ -2,7 +2,7 @@
   <div class="exPos">
     <div>
       <el-row>
-        <el-col :span='7' class='pos-order' id="order-list">
+        <el-col :span='7' class='pos-order'>
           <el-tabs>
             <el-tab-pane label="点餐">
               <el-table :data="tableData" border style="width: 100%">
