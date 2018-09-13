@@ -147,15 +147,15 @@
                   }else
                   obj.value=prevalue; //清除非法输入，恢复以前输入值。
           */
-          this.inputSkuNum[cols][rows]=stockcount; //输入超出库存，推测用户需要最大量，也就是库存量。
+          this.inputSkuNum[cols][rows]= parseInt(stockcount); //输入超出库存，推测用户需要最大量，也就是库存量。
         }
         if(!this.smallPlan[cols]){
           this.smallPlan[cols] = 0
         }else {
           // this.smallPlan[cols] = parseInt(this.smallPlan[cols]);
         }
-        this.smallPlan[cols] = this.smallPlan[cols] + thisinput - this.prevalue;
-        this.total.num= this.total.num + thisinput - this.prevalue;
+        this.smallPlan[cols] = this.smallPlan[cols] + this.inputSkuNum[cols][rows] - this.prevalue;
+        this.total.num= this.total.num + this.inputSkuNum[cols][rows] - this.prevalue;
         this.total.price = this.total.num*100;
        },
       keepprevalue(obj){//把每个输入框改变前的值保留下来。
