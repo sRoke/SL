@@ -137,7 +137,7 @@
       checkamount(stockcount,obj,cols,rows){ //判断输入是否正确，并且计算小计。参数含义：当前输入框的库存数，当前输入框对象，总共cols行，rows列，价格，当前行数
         console.log(obj,typeof obj)
         var thisinput=parseInt(obj); //获得本次的输入值
-        console.log(obj,typeof thisinput)
+        console.log(obj,typeof thisinput);
         if (isNaN(thisinput)) thisinput=0;
         if ( thisinput > stockcount){
           alert('超出库存数量'+stockcount+'！');
@@ -148,15 +148,16 @@
                   obj.value=prevalue; //清除非法输入，恢复以前输入值。
           */
           this.inputSkuNum[cols][rows]= parseInt(stockcount); //输入超出库存，推测用户需要最大量，也就是库存量。
+          thisinput = parseInt(stockcount);
         }
         if(!this.smallPlan[cols]){
           this.smallPlan[cols] = 0
         }else {
           // this.smallPlan[cols] = parseInt(this.smallPlan[cols]);
         }
-        this.smallPlan[cols] = this.smallPlan[cols] + this.inputSkuNum[cols][rows] - this.prevalue;
-        this.total.num= this.total.num + this.inputSkuNum[cols][rows] - this.prevalue;
-        this.total.price = this.total.num*100;
+        this.smallPlan[cols] = this.smallPlan[cols] + thisinput - this.prevalue;
+        this.total.num= this.total.num + thisinput - this.prevalue;
+        this.total.price = this.total.num*this.item.price;
        },
       keepprevalue(obj){//把每个输入框改变前的值保留下来。
          this.prevalue=parseInt(obj);
