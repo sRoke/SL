@@ -15,6 +15,16 @@
         </transition>
       </li>
     </ul>
+    
+    <h2>项目demo入口</h2>
+    <ul>
+      <li>
+        <transition name='fade'>
+          <router-link to="/proMain">project</router-link>
+        </transition>
+      </li>
+    </ul>
+
 
     <h2>vuex测试</h2>
     <ul>
@@ -31,8 +41,13 @@
         <transition name='fade'>
           <router-link to="/sl">SL入口</router-link>
         </transition>
+        /
         <transition name='fade'>
           <router-link to="/exMain/exPos">example-exMain入口</router-link>
+        </transition>
+        /
+         <transition name='fade'>
+          <router-link to="/echartDemo">echart测试</router-link>
         </transition>
       </li>
     </ul>
@@ -45,56 +60,56 @@
 </template>
 
 <script>
-  export default {
-    name: 'HelloWorld',
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
-    },
-    beforeRouteEnter:(to,from,next)=>{
-      console.log("准备进入路由模板");
-      next();
-    },
-    beforeRouteLeave: (to, from, next) => {
-      console.log("准备离开路由模板");
-      next();
-    }
+export default {
+  name: "HelloWorld",
+  data() {
+    return {
+      msg: "Welcome to Your Vue.js App"
+    };
+  },
+  beforeRouteEnter: (to, from, next) => {
+    console.log("准备进入路由模板");
+    next();
+  },
+  beforeRouteLeave: (to, from, next) => {
+    console.log("准备离开路由模板");
+    next();
   }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
+h1,
+h2 {
+  font-weight: normal;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
 
-  a {
-    color: #42b983;
-  }
+a {
+  color: #42b983;
+}
 
-
-  .fade-enter {
-    opacity:0;
-  }
-  .fade-leave{
-    opacity:1;
-  }
-  .fade-enter-active{
-    transition:opacity .5s;
-  }
-  .fade-leave-active{
-    opacity:0;
-    transition:opacity .5s;
-  }
+.fade-enter {
+  opacity: 0;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+.fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 </style>

@@ -30,6 +30,15 @@ import exMain from '@/components/page/example/exMain';
 import saoLei from '@/components/page/SL';
 
 
+//-----------------------------------------echartDemo
+import echartDemo from '@/components/page/echartDemo';
+
+
+//-----------------------------------------priject
+import proMain from '@/components/page/projectMain/proMain';
+import pro11 from '@/components/page/projectMain/pro1/pro11';
+import pro12 from '@/components/page/projectMain/pro1/pro12';
+
 Vue.use(Router);
 
 
@@ -61,6 +70,18 @@ export default new Router({
                 { path: '/page2', component: page2, name: 'page2', beforeEnter: beforeEnterFn },
             ]
         },
+
+        {
+            path: '/proMain',
+            name: 'proMain',
+            component: proMain,
+            beforeEnter: beforeEnterFn,
+            children: [
+              {path: '/pro11', component: pro11, name: 'pro11', beforeEnter: beforeEnterFn},
+              {path: '/pro12', component: pro12, name: 'pro12', beforeEnter: beforeEnterFn},
+            ]
+        },
+
         {
             path: '/sl',
             name: '游戏页面',
@@ -106,7 +127,12 @@ export default new Router({
                 // {path:'/page2',component:page2,name:'page2', beforeEnter:beforeEnterFn},
             ]
         },
-
+        {
+            path: '/echartDemo',
+            name: 'echartDemo',
+            component: echartDemo,
+            beforeEnter: beforeEnterFn
+        },
         {
             path: '/*',
             redirect: '/'
